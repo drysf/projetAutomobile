@@ -1,0 +1,24 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>${titre != null ? titre : 'Gestionnaire de flotte'}</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+</head>
+<body>
+<header class="topbar">
+    <h1><a href="${pageContext.request.contextPath}/">Gestionnaire de Flotte</a></h1>
+    <nav>
+        <a href="${pageContext.request.contextPath}/vehicules">Vehicules</a>
+        <a href="${pageContext.request.contextPath}/chauffeurs">Chauffeurs</a>
+        <a href="${pageContext.request.contextPath}/missions">Missions</a>
+        <a href="${pageContext.request.contextPath}/stats">Statistiques</a>
+    </nav>
+</header>
+<main>
+    <c:if test="${not empty erreur}">
+        <div class="alert">${erreur}</div>
+    </c:if>

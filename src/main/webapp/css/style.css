@@ -1,0 +1,244 @@
+/* Theme sobre, lisible, sans framework */
+:root {
+    --primary: #2b59c3;
+    --primary-dark: #1f4196;
+    --bg: #f5f6fa;
+    --surface: #ffffff;
+    --border: #d8dce4;
+    --text: #1f2533;
+    --muted: #6c7384;
+    --danger: #c0392b;
+    --success: #27ae60;
+    --warning: #e67e22;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.45;
+}
+
+.topbar {
+    background: var(--primary-dark);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.topbar h1 { margin: 0; font-size: 1.3rem; }
+.topbar h1 a { color: white; text-decoration: none; }
+.topbar nav a {
+    color: white;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+.topbar nav a:hover { text-decoration: underline; }
+
+main {
+    max-width: 1200px;
+    margin: 1.5rem auto;
+    padding: 0 1.5rem;
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 2rem 0;
+}
+
+h2 { color: var(--primary-dark); }
+h3 { color: var(--primary-dark); margin-top: 2rem; }
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.card .label { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; }
+.card .value { font-size: 1.5rem; font-weight: 600; }
+.card a { color: var(--primary); font-size: 0.85rem; }
+
+/* Tables */
+.data {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin: 1rem 0;
+}
+.data th, .data td {
+    padding: 0.65rem 0.85rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+}
+.data th {
+    background: #ebeef5;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+.data th a {
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+.data th a:hover { text-decoration: underline; }
+.data tbody tr:hover { background: #f8f9fc; }
+.data .empty { text-align: center; color: var(--muted); font-style: italic; }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.4rem 0.85rem;
+    background: var(--border);
+    color: var(--text);
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.btn:hover { background: #c3c7d1; }
+.btn.primary { background: var(--primary); color: white; }
+.btn.primary:hover { background: var(--primary-dark); }
+.btn.danger { background: var(--danger); color: white; }
+.btn.light { background: white; border: 1px solid var(--border); }
+.btn.small { padding: 0.25rem 0.55rem; font-size: 0.8rem; }
+
+/* Filtres */
+.filtres {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    align-items: center;
+}
+.filtres input, .filtres select {
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Formulaires */
+.formulaire {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+.formulaire label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+.formulaire label.inline {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text);
+}
+.formulaire label.longue { grid-column: span 1; }
+.formulaire input, .formulaire select {
+    padding: 0.45rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+.formulaire fieldset {
+    grid-column: 1 / -1;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+}
+.formulaire fieldset legend {
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+.formulaire .actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0; }
+.inline-form { display: inline-flex; gap: 0.4rem; align-items: center; }
+.inline-form input[type=text] {
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: var(--border);
+    color: var(--text);
+}
+.badge.mini { font-size: 0.7rem; padding: 0.08rem 0.4rem; margin-right: 2px; }
+.badge.DISPONIBLE { background: #d1f5e3; color: #1d7a4d; }
+.badge.EN_MISSION { background: #d4def0; color: #2b59c3; }
+.badge.EN_PANNE   { background: #fadcd9; color: #c0392b; }
+.badge.EN_ENTRETIEN { background: #fde7c5; color: #b3631d; }
+.badge.PLANIFIEE { background: #e2d9f3; color: #5d3fd3; }
+.badge.EN_COURS  { background: #d4def0; color: #2b59c3; }
+.badge.TERMINEE  { background: #d1f5e3; color: #1d7a4d; }
+.badge.ANNULEE   { background: #f0d6d6; color: #7a1d1d; }
+.badge.urg0, .badge.urg1, .badge.urg2 { background: #d1f5e3; color: #1d7a4d; }
+.badge.urg3, .badge.urg4, .badge.urg5 { background: #fde7c5; color: #b3631d; }
+.badge.urg6, .badge.urg7              { background: #fadcd9; color: #c0392b; }
+.badge.urg8, .badge.urg9              { background: #c0392b; color: white; }
+
+/* Alert */
+.alert {
+    background: #fadcd9;
+    border-left: 4px solid var(--danger);
+    color: #6e1d14;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.itineraire {
+    background: var(--surface);
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
